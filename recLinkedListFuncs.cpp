@@ -27,7 +27,12 @@ int recursiveLargestValue(Node* head) {
     return head->data;
   }
   else{
-    next_item = head->next;
-    if (next_item>head)
-  return -42;
+    next_item = recursiveLargestValue(head->next);
+    if (next_item>head){
+      return next_item->data;
+    }
+    else{
+      return head->data;
+    }
+  }
 }
