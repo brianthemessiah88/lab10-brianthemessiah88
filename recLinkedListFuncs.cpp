@@ -6,7 +6,15 @@
 //return sum of all values in linked list using a recursive approach
 //if head is null return 0
 int recursiveSum(Node* head) {
-  return -42;
+  Node* next_node;
+  if (head == NULL){
+    return 0;
+  else{
+    next_node = head->next;
+    next_node->data += head;
+    recursiveSum(next_node);
+  }
+  return next_node->data;
 }
 
 //head: ptr to a Node* which is the head of a linked list
